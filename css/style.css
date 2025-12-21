@@ -1,0 +1,66 @@
+@import url("reset.css");
+body {
+  width: 80%;
+  background-color: gray;
+  font-size: 20px;
+  margin: 10px auto 15px;
+  color: beige;
+  text-align: center;
+}
+div + div {
+  border-top: 1px solid black;
+  margin-bottom: 5px;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 35px;
+}
+h2 {
+  font-size: 30px;
+}
+span {
+  color: #cc33ff;
+  margin: 0 10px 0;
+}
+.who-its {
+  font-size: 20px;
+  background-color: #ffb3d9;
+  margin: 10px 40px 10px;
+  padding: 5px;
+}
+.history {
+  color: #ffff66;
+}
+.history > p {
+  color: #fffeac;
+}
+.breeds {
+  background-color: #ff80bf;
+}
+.breeds li {
+  color: aliceblue;
+}
+.tips {
+  background-color: #ff4da6;
+  color: burlywood;
+}
+.tips h2 {
+  color: plum;
+}
+.image {
+  width: 500px;
+  height: 400px;
+  margin: 10px auto;
+}
+div ul {
+  background-color: #ff1a8c;
+}
+li > span {
+  color: #ffb3ff;
+  margin: 0 5px 0;
+}
+.tips li span {
+  color: #00aaff;
+}
