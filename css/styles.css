@@ -6,6 +6,7 @@ body {
   margin: 10px auto 15px;
   color: beige;
   text-align: center;
+  /* box-sizing: border-box; */
 }
 div + div {
   border-top: 1px solid black;
