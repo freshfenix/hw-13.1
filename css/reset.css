@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -78,7 +84,8 @@ summary,
 time,
 mark,
 audio,
-video {
+video,
+button {
   margin: 0;
   padding: 0;
   border: 0;
@@ -86,7 +93,10 @@ video {
   font: inherit;
   vertical-align: top;
 }
-/* HTML5 display-role reset for older browsers */
+html,
+body {
+  scroll-behavior: smooth;
+}
 
 body {
   line-height: 1;
@@ -109,4 +119,18 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
