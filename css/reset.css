@@ -3,6 +3,17 @@
 *::after {
   box-sizing: border-box;
 }
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+
+  font: inherit;
+  color: inherit;
+}
 
 html,
 body,

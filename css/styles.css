@@ -1,1 +1,241 @@
 @import url("reset.css");
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --brand-color: #7416a0;
+  --white-color: #ffffff;
+  --input-bg: #9847b1;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: pink url(../image/background.webp) no-repeat 50% / cover;
+}
+.wraper {
+  display: flex;
+  font-family: "Roboto";
+  font-size: 12px;
+  height: 100%;
+}
+.container {
+  margin-left: auto;
+  min-width: 496px;
+  min-height: 100%;
+  overflow: auto;
+  background-color: #e9e9e973;
+  backdrop-filter: blur(10px);
+}
+.form-container {
+  width: clamp(280px, 27.4vw, 340px);
+  margin: 5vw auto;
+  text-align: center;
+  color: var(--white-color);
+}
+.hidden {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+.form-width {
+  width: 100%;
+  height: 44px;
+  border-radius: 88px;
+}
+
+/* CUSTOM SWITCH */
+
+.custom-switch {
+  display: inline-block;
+  margin-bottom: 75px;
+  height: 36px;
+}
+.authorization-span {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex: 1 1 50%;
+  justify-content: center;
+  align-items: center;
+}
+.custom-switch-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.custom-switch-label {
+  display: inline-flex;
+  position: relative;
+  border: var(--brand-color) 1px solid;
+  border-radius: 72px;
+  cursor: pointer;
+  height: 100%;
+}
+.custom-switch-label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 49.9%;
+  height: 99.9%;
+  background: var(--brand-color);
+  border-radius: 64px;
+  transition: all 0.3s linear;
+}
+.custom-switch-input:checked + .custom-switch-label::before {
+  transform: translateX(100%);
+  right: calc(-100%);
+}
+
+/* AUTORISATION */
+
+.form-title {
+  font-size: 30px;
+  margin-bottom: 29px;
+}
+.authorization-input {
+  padding: 15px 20px;
+  background-color: var(--input-bg);
+  color: var(--white-color);
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+.authorization-input:hover,
+.authorization-input:focus {
+  transform: scale(105%);
+}
+.authorization-input::placeholder {
+  color: var(--white-color);
+}
+
+.authorization-input + .authorization-input {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* USER-DATA */
+
+.account {
+  display: inline-flex;
+  margin-bottom: 35px;
+}
+.user-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.remember-label {
+  position: relative;
+  padding-left: 19px;
+  color: var(--brand-color);
+  cursor: pointer;
+}
+.custom-checkbox label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px var(--brand-color) solid;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+}
+.custom-checkbox:hover label::before {
+  transform: scale(1.1);
+}
+.custom-checkbox label::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 13px;
+  height: 13px;
+  background-color: var(--input-bg);
+  border-radius: 2px;
+  opacity: 0;
+}
+.custom-checkbox input:checked + label::after {
+  opacity: 1;
+}
+.authorization-link {
+  color: var(--white-color);
+  margin-left: 33px;
+}
+
+/* BUTTON */
+.button-login {
+  background-color: var(--brand-color);
+  margin: 30px 0 35px;
+  transition: all 0.5s linear;
+}
+.button-login:hover {
+  background-color: #ad2378;
+  box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.25);
+}
+.text-form {
+  color: var(--brand-color);
+}
+
+/* SOCIAL LIST */
+
+.social-list {
+  display: flex;
+  gap: 9px;
+  justify-content: center;
+  padding: 24px;
+}
+.social-link {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.social-link svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand-color);
+}
+.social-link:hover svg {
+  animation: social 0.5s ease-in-out;
+}
+li:hover {
+  animation: social-shadow 0.5s ease-in-out;
+}
+
+/* ANIMATION */
+
+@keyframes social-shadow {
+  50% {
+    border-bottom: rgba(122, 71, 112, 0.699) 2px solid;
+    border-radius: 2px;
+  }
+  100% {
+    border: none;
+  }
+}
+@keyframes social {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  100% {
+    bottom: 0;
+  }
+}
